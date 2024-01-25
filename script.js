@@ -25,20 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         sections.forEach((section) => {
             const imagePlaceholder = section.querySelector('.image-placeholder');
-            if (imagePlaceholder && isElementInViewPort(section)) {
-                imagePlaceholder.style.opacity = '1'; // Triggering the fade-in effect
+            if (imagePlaceholder) {
+                const sectionPos = section.getBoundingClientRect();
+                const imagePos = imagePlaceholder.getBoundingClientRect();
+                // Check if the section is within the viewport
+                if (sectionPos.top < window.innerHeight && sectionPos.bottom >= 0) {
+                    section.style.opacity = '1'; // Fade in text
+                    // Check if the image is within the viewport
+                    if (imagePos.top < window.innerHeight && imagePos.bottom >= 0) {
+                        imagePlaceholder.style.opacity = '1'; // Fade in image
+                        imagePlaceholder.style.transform = 'scale(1)'; // Scale up image
+                    }
+                } else {
+                    section.style.opacity = '0'; // Fade out text
+                    imagePlaceholder.style.opacity = '0'; // Fade out image
+                    imagePlaceholder.style.transform = 'scale(0)'; // Scale down image
+                }
             }
         });
     });
-
-    // Helper Function to Check if Element is in Viewport
-    function isElementInViewPort(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
 });
