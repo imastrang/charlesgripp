@@ -1,41 +1,16 @@
-/* Basic Reset and Body Styles... */
-
-/* Landing Page */
-.landing {
-    /* Styles for the landing page appearance */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Top Fixed Bar with Logo and Menu */
-.top-bar {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
 }
 
-.logo {
-    margin-left: 10px; /* Small indent from the left */
-}
-
-.top-bar nav ul {
-    display: flex;
-    list-style: none;
-}
-
-.top-bar nav ul li {
-    margin-left: 20px;
-}
-
-.top-bar nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
 /* Landing Page Styling */
 .landing {
     background: url('landing-bg.jpg') no-repeat center center/cover;
@@ -56,7 +31,6 @@
 /* Top Fixed Bar Styling */
 .top-bar {
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
     padding: 10px 20px;
     position: fixed;
@@ -75,6 +49,7 @@
 .top-bar nav ul {
     display: flex;
     list-style: none;
+    margin-right: 10px; /* Adjustment to keep menu within screen */
 }
 
 .top-bar nav ul li {
@@ -108,23 +83,23 @@ main section {
 
 /* Section Specific Styles */
 #about .section-content {
-    /* Unique styling for 'About Me' section */
     text-align: left;
+    /* Unique styling for 'About Me' section */
 }
 
 #portfolio .section-content {
-    /* Unique styling for 'Portfolio' section */
     text-align: right;
+    /* Unique styling for 'Portfolio' section */
 }
 
 #insights .section-content {
-    /* Unique styling for 'Insights' section */
     text-align: justify;
+    /* Unique styling for 'Insights' section */
 }
 
 #contact .section-content {
-    /* Unique styling for 'Contact' section */
     text-align: center;
+    /* Unique styling for 'Contact' section */
 }
 
 /* Image Placeholder Styles */
@@ -133,22 +108,25 @@ main section {
     max-width: 500px;
     margin: 20px auto;
     border: 1px dashed #ccc;
+    /* Initially hidden, will fade in */
     opacity: 0;
     transition: opacity 1s ease;
 }
 
-/* Animations for Image */
+/* Animations for Image Placeholders */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 .image-placeholder {
+    /* General fade-in animation */
     animation: fadeIn 1s ease-in-out;
 }
 
 /* Example of specific section image animation */
 #about .image-placeholder {
+    /* Slide-in animation for 'About Me' section */
     animation: slideInFromLeft 1s ease-in-out;
 }
 
@@ -156,7 +134,6 @@ main section {
     from { transform: translateX(-100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
-
 
 /* Footer */
 footer {
@@ -193,4 +170,3 @@ footer {
         max-width: 300px; /* Smaller image placeholders on smaller screens */
     }
 }
-
