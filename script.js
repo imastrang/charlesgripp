@@ -1,17 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling and fading effect for the landing page
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Landing Page Interaction
     const landingPage = document.getElementById('landingPage');
     landingPage.addEventListener('click', () => {
         landingPage.style.opacity = '0';
         setTimeout(() => {
-            landingPage.style.display = 'none';
-            document.getElementById('about').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }, 1000); // Fade effect duration (1 second)
+            landingPage.remove();
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }, 1000);
     });
 
-    // Enhanced full-page scroll snap with slower transition
+    // Full-page scroll snap (enhanced with slower transition)
     const sections = document.querySelectorAll('.main-content section');
     let currentSectionIndex = 0;
     let isScrolling;
@@ -31,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth',
                 block: 'start'
             });
-        }, 150); // Delay for initiating scroll to next section
+        }, 150);
     });
 });
