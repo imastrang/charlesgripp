@@ -1,17 +1,42 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f5f5f5;
-    line-height: 1.6;
-}
+/* Basic Reset and Body Styles... */
 
 /* Landing Page */
+.landing {
+    /* Styles for the landing page appearance */
+}
+
+/* Top Fixed Bar with Logo and Menu */
+.top-bar {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    margin-left: 10px; /* Small indent from the left */
+}
+
+.top-bar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.top-bar nav ul li {
+    margin-left: 20px;
+}
+
+.top-bar nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+/* Landing Page Styling */
 .landing {
     background: url('landing-bg.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -25,9 +50,10 @@ body {
 .landing h1 {
     font-size: 4rem;
     color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Top Fixed Bar */
+/* Top Fixed Bar Styling */
 .top-bar {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -36,21 +62,19 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1000;
 }
 
 .top-bar .logo {
-    float: left;
-}
-
-.top-bar nav {
-    float: right;
+    margin-left: 10px; /* Small indent from the left */
 }
 
 .top-bar nav ul {
-    list-style: none;
     display: flex;
+    list-style: none;
 }
 
 .top-bar nav ul li {
@@ -62,52 +86,11 @@ body {
     color: #333;
     font-size: 1em;
 }
-
-/* Main Content */
-main {
-    margin-top: 60px; /* Space for top bar */
-}
-
-main section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section-content {
-    width: 60%; /* Adjust as needed */
-    margin: auto;
-    text-align: center; /* Default alignment */
-}
-
-/* Section Specific Styles */
-#about .section-content {
-    /* Unique styling for 'About Me' section */
-}
-
-#portfolio .section-content {
-    /* Unique styling for 'Portfolio' section */
-    text-align: left; /* Example alignment */
-}
-
-#insights .section-content {
-    /* Unique styling for 'Insights' section */
-}
-
-#contact .section-content {
-    /* Unique styling for 'Contact' section */
-}
+/* Main Content Sections */
+/* ... Existing styles for sections ... */
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+/* ... Existing styles ... */
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    /* Adjustments for smaller screens */
-}
+/* Media Queries */
+/* ... Responsive adjustments ... */
