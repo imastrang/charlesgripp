@@ -26,6 +26,8 @@ body {
     font-size: 4rem;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    width: 80%; /* Stretched to fit the page */
+    border: medium-size; /* Medium-sized border */
 }
 
 /* Top Fixed Bar Styling */
@@ -108,7 +110,6 @@ main section {
     max-width: 500px;
     margin: 20px auto;
     border: 1px dashed #ccc;
-    /* Initially hidden, will fade in */
     opacity: 0;
     transition: opacity 1s ease;
 }
@@ -120,13 +121,11 @@ main section {
 }
 
 .image-placeholder {
-    /* General fade-in animation */
     animation: fadeIn 1s ease-in-out;
 }
 
 /* Example of specific section image animation */
 #about .image-placeholder {
-    /* Slide-in animation for 'About Me' section */
     animation: slideInFromLeft 1s ease-in-out;
 }
 
