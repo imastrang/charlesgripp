@@ -13,7 +13,7 @@ body {
 
 /* Landing Page Styling */
 .landing {
-    background: url('landing-bg.jpg') no-repeat center center/cover;
+    background: rgba(34, 139, 34, 0.5); /* Forest green with transparency */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,8 +26,10 @@ body {
     font-size: 4rem;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    width: 80%; /* Stretched to fit the page */
-    border: medium-size; /* Medium-sized border */
+    width: 40%;
+    border: medium solid #fff;
+    font-family: 'Times New Roman', serif; /* Regal font */
+    text-transform: uppercase;
 }
 
 /* Top Fixed Bar Styling */
@@ -45,28 +47,30 @@ body {
 }
 
 .top-bar .logo {
-    margin-left: 10px; /* Small indent from the left */
+    margin-left: 10px;
 }
 
 .top-bar nav ul {
     display: flex;
     list-style: none;
-    margin-right: 10px; /* Adjustment to keep menu within screen */
+    margin-right: 10px;
 }
 
 .top-bar nav ul li {
-    margin-left: 20px;
+    margin-left: 30px; /* Increased spacing */
+    text-transform: uppercase; /* All-caps menu items */
 }
 
 .top-bar nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 1em;
+    font-weight: 300; /* Thin font */
 }
 
 /* Main Content */
 main {
-    margin-top: 60px; /* Space for top bar */
+    margin-top: 60px;
 }
 
 main section {
@@ -78,30 +82,16 @@ main section {
 }
 
 .section-content {
-    width: 60%; /* Adjust as needed */
+    width: 60%;
     margin: auto;
-    text-align: center; /* Default alignment */
+    text-align: center;
 }
 
 /* Section Specific Styles */
-#about .section-content {
-    text-align: left;
-    /* Unique styling for 'About Me' section */
-}
-
-#portfolio .section-content {
-    text-align: right;
-    /* Unique styling for 'Portfolio' section */
-}
-
-#insights .section-content {
-    text-align: justify;
-    /* Unique styling for 'Insights' section */
-}
-
-#contact .section-content {
-    text-align: center;
-    /* Unique styling for 'Contact' section */
+#about .section-content, #portfolio .section-content, #insights .section-content, #contact .section-content {
+    /* Unique styling for each section */
+    transition: opacity 1s ease-in-out;
+    opacity: 0; /* Initially hidden */
 }
 
 /* Image Placeholder Styles */
@@ -110,28 +100,9 @@ main section {
     max-width: 500px;
     margin: 20px auto;
     border: 1px dashed #ccc;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-/* Animations for Image Placeholders */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.image-placeholder {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Example of specific section image animation */
-#about .image-placeholder {
-    animation: slideInFromLeft 1s ease-in-out;
-}
-
-@keyframes slideInFromLeft {
-    from { transform: translateX(-100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform: scale(0); /* Initially scaled down */
+    opacity: 0; /* Initially hidden */
 }
 
 /* Footer */
@@ -162,10 +133,14 @@ footer {
     }
 
     main .section-content {
-        width: 90%; /* Adjust for smaller screens */
+        width: 90%;
     }
 
     .image-placeholder {
-        max-width: 300px; /* Smaller image placeholders on smaller screens */
+        max-width: 300px;
+    }
+
+    .landing h1 {
+        width: 80%; /* Adjust for smaller screens */
     }
 }
