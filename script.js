@@ -27,10 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
             block: 'start'
         });
     });
-});
 
-
-    sidebarToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
+    // Landing Page Click Event
+    const landingPage = document.getElementById('landingPage');
+    landingPage.addEventListener('click', () => {
+        // Scroll to the first section (About Me)
+        document.getElementById('about').scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
