@@ -19,13 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add additional interactive elements as needed
     // For example, button hover effects or dynamic content loading
-});
+    // Landing Page
 document.addEventListener('DOMContentLoaded', function() {
     const landingPage = document.getElementById('landingPage');
-    const landingMessage = document.querySelector('.landing-message');
 
-    landingMessage.addEventListener('click', function() {
-        landingPage.style.opacity = '0';
+    landingPage.addEventListener('click', function() {
+        this.style.opacity = '0';
         setTimeout(function() {
             landingPage.style.display = 'none';
         }, 500); // Matches the transition time in CSS
@@ -33,3 +32,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Rest of your JavaScript...
 });
+
