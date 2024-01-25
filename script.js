@@ -2,13 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Landing Page Interaction
     const landingPage = document.querySelector('.landing');
     const topBar = document.querySelector('.top-bar');
-
+    
     landingPage.addEventListener('click', () => {
         landingPage.style.opacity = '0';
         setTimeout(() => {
             landingPage.style.display = 'none';
             topBar.style.display = 'flex';
-            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
         }, 1000);
     });
 
@@ -16,13 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.top-bar a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            targetSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
     // Section-specific Animations and Effects
+    const sections = document.querySelectorAll('main section');
     window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('main section');
         sections.forEach((section) => {
             const imagePlaceholder = section.querySelector('.image-placeholder');
             if (imagePlaceholder && isElementInViewPort(section)) {
