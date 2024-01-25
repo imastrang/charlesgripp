@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth Scrolling for anchor links
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
@@ -9,27 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Responsive Sidebar Toggle
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
+    // Full-page scroll snap
+    const sections = document.querySelectorAll('.main-content section');
+    let currentSectionIndex = 0;
 
-    sidebarToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('active');
+    window.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        if (e.deltaY < 0 && currentSectionIndex > 0) {
+            // Scrolling up
+            currentSectionIndex--;
+        } else if (e.deltaY > 0 && currentSectionIndex < sections.length - 1) {
+            // Scrolling down
+            currentSectionIndex++;
+        }
+
+        sections[currentSectionIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
 
-    // Add additional interactive elements as needed
-    // For example, button hover effects or dynamic content loading
-    // Landing Page
-document.addEventListener('DOMContentLoaded', function() {
-    const landingPage = document.getElementById('landingPage');
+    // Sidebar Toggle for Mobile View
+    const sidebarToggle = document.getElementById('navbarToggle');
+    const mobileNav = document.getElementById('mobileNav');
 
-    landingPage.addEventListener('click', function() {
-        this.style.opacity = '0';
-        setTimeout(function() {
-            landingPage.style.display = 'none';
-        }, 500); // Matches the transition time in CSS
+    sidebarToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
     });
-
-    // Rest of your JavaScript...
 });
-
