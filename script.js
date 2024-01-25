@@ -5,21 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.style.opacity = '1'; // Show the target frame
-            target.scrollIntoView({ behavior: 'smooth' });
-            hideOtherFrames(target);
+            smoothScrollToFrame(document.querySelector(this.getAttribute('href')));
         });
     });
 
-    // Hide other frames not in view
-    function hideOtherFrames(activeFrame) {
+    // Gradual appearance of text as you scroll to each frame
+    window.addEventListener('scroll', () => {
         sections.forEach(section => {
-            if (section !== activeFrame) {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionHeight = window.innerHeight;
+            if (sectionTop <= sectionHeight / 2) {
+                section.style.opacity = '1';
+            } else {
                 section.style.opacity = '0';
             }
         });
-    }
+    });
 
     // Landing Page Interaction
     const landingPage = document.getElementById('landingPage');
@@ -27,22 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         landingPage.style.opacity = '0';
         setTimeout(() => {
             landingPage.remove();
-            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-            hideOtherFrames(document.getElementById('about'));
+            smoothScrollToFrame(document.getElementById('about'));
         }, 1000);
     });
 
-    // Full-page scroll snap with frame appearance/disappearance
-    let currentSectionIndex = 0;
-    window.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        if (e.deltaY < 0 && currentSectionIndex > 0) {
-            currentSectionIndex--;
-        } else if (e.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-        }
-        sections[currentSectionIndex].style.opacity = '1'; // Show the current frame
-        sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-        hideOtherFrames(sections[currentSectionIndex]);
-    });
+    // Smooth scroll to frame function
+    function smoothScrollToFrame(target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            target.style.opacity = '1';
+        }, 600); // Slower reveal of content
+    }
 });
