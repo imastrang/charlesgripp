@@ -6,132 +6,120 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    background-color: var(--white);
-}
-
-/* Color Palette */
-:root {
-    --navy-blue: #003366;
-    --gold: #D4AF37;
-    --white: #FFFFFF;
-    --light-grey: #D3D3D3;
+    background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
 /* Typography */
 h1, h2, h3 {
-    font-family: 'Lora', serif;
-    color: var(--navy-blue);
-    margin-bottom: 0.5em;
+    margin-bottom: 20px;
+    color: #0056b3;
 }
 
 p {
-    line-height: 1.6;
-    color: var(--light-grey);
+    margin-bottom: 15px;
 }
 
-/* Navbar and Sidebar */
-#sidebar {
-    background-color: var(--navy-blue);
-    color: var(--white);
-    width: 250px;
-    position: fixed;
-    height: 100%;
+/* Landing Page */
+.landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.landing h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.landing p {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #333;
+    color: #fff;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
 }
 
-#sidebar a {
-    color: var(--white);
-    text-decoration: none;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
     display: block;
-    padding: 10px 0;
-    transition: color 0.3s ease;
+    padding: 10px;
+    text-decoration: none;
 }
 
-#sidebar a:hover {
-    color: var(--gold);
+.sidebar ul li a:hover {
+    background: #555;
 }
 
 /* Main Content */
 .main-content {
-    margin-left: 250px;
-    padding: 40px;
-    background-color: var(--white);
-    min-height: 100vh;
-}
-
-/* Cards and Buttons */
-.card {
-    background-color: var(--white);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+    margin-left: 200px;
     padding: 20px;
-    margin-bottom: 20px;
-    border-left: 5px solid var(--gold);
 }
 
-.button {
-    background-color: var(--navy-blue);
-    color: var(--white);
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .main-content {
+        margin: 0;
+    }
+
+    .landing h1 {
+        font-size: 3rem;
+    }
+
+    .landing p {
+        font-size: 1.2rem;
+    }
 }
 
-.button:hover {
-    background-color: var(--gold);
+/* Animations and Transitions */
+a {
+    transition: color 0.3s;
+}
+
+.sidebar-toggle {
+    transition: all 0.3s;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    color: var(--light-grey);
+    background: #333;
+    color: #fff;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    #sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        box-shadow: none;
-    }
-    .main-content {
-        margin-left: 0;
-        padding: 20px;
-    }
-}
-
-/* Shadow Effects */
-.shadow-effect {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.shadow-effect:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.landing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    z-index: 10; /* Ensure it's above other content */
-}
-
-.landing-message {
-    font-size: 4em;
-    color: var(--gold);
-    cursor: pointer;
-    transition: opacity 0.5s ease;
-}
+/* Additional Styling as needed */
