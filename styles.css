@@ -1,2 +1,64 @@
 /* styles.css */
 /* ... all the CSS styles ... */
+/* Add this to your styles.css file */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    transition: width 0.5s;
+}
+
+#sidebar h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background-color: #444;
+}
+
+#main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header h1 {
+    color: #333;
+}
+
+main p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+footer p {
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* Add more styles as needed */
