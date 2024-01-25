@@ -1,30 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for menu links
-    document.querySelectorAll('.top-menu a[href^="#"]').forEach(anchor => {
+    const landingPage = document.querySelector('.landing');
+    const topBar = document.querySelector('.top-bar');
+
+    // Landing Page Interaction
+    landingPage.addEventListener('click', () => {
+        landingPage.style.opacity = '0';
+        setTimeout(() => {
+            landingPage.style.display = 'none';
+            topBar.style.display = 'flex';
+        }, 1000);
+    });
+
+    // Smooth Scrolling for Top Bar Links
+    document.querySelectorAll('.top-bar a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            smoothScrollToSection(this.getAttribute('href'));
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            targetSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // Smooth scroll function
-    function smoothScrollToSection(href) {
-        const targetSection = document.querySelector(href);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        triggerSectionAnimations(href.substring(1));
-    }
-
-    // Function to trigger specific animations
-    function triggerSectionAnimations(sectionId) {
-        if (sectionId === 'portfolio') {
-            const image = document.querySelector('#portfolio .image-placeholder');
-            image.style.opacity = 1;
-        }
-        // Additional animations for other sections
-    }
-
-    // Section-specific scrolling effects
-    window.addEventListener('scroll', () => {
-        // Code for gentle and slow section snapping
-    });
+    // Additional JS for section-specific effects
+    // ...
 });
