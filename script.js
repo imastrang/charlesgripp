@@ -2,3 +2,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Future code for sidebar toggle or other interactive elements will go here
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('overlay');
+    var sidebarToggle = document.getElementById('sidebarToggle');
+
+    sidebarToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('sidebar-active');
+        overlay.classList.toggle('overlay-active');
+    });
+
+    overlay.addEventListener('click', function() {
+        sidebar.classList.remove('sidebar-active');
+        overlay.classList.remove('overlay-active');
+    });
+});
