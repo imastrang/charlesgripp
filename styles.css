@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f0f0f0;
+    background-color: #eaeaea;
     line-height: 1.6;
 }
 
@@ -63,43 +63,13 @@ body {
 .main-content {
     margin-left: 200px;
     padding: 20px;
-    transition: transform 0.8s ease-in-out; /* Smoother transition for snapping */
+    overflow: hidden;
 }
 
-.main-content section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-
-    .landing h1 {
-        font-size: 2.5rem;
-    }
-}
-
-/* Additional Styling */
-/* Add specific styling for elements like buttons, forms, etc. */
+/* Content Frames */
+.content-frame {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    padding: 20px
