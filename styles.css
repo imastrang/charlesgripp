@@ -137,11 +137,60 @@ main section {
     transition: opacity 1s ease;
 }
 
-/* Animations for Image Placeholders */
-/* Add specific animations or transitions for image placeholders */
+/* Animations for Image */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-placeholder {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Example of specific section image animation */
+#about .image-placeholder {
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
 
 /* Footer */
-/* ... Existing styles ... */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
 
-/* Media Queries */
-/* ... Responsive adjustments ... */
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .top-bar .logo, .top-bar nav ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .top-bar nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .top-bar nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    main .section-content {
+        width: 90%; /* Adjust for smaller screens */
+    }
+
+    .image-placeholder {
+        max-width: 300px; /* Smaller image placeholders on smaller screens */
+    }
+}
+
