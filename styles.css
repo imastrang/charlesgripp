@@ -86,8 +86,59 @@
     color: #333;
     font-size: 1em;
 }
-/* Main Content Sections */
-/* ... Existing styles for sections ... */
+
+/* Main Content */
+main {
+    margin-top: 60px; /* Space for top bar */
+}
+
+main section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.section-content {
+    width: 60%; /* Adjust as needed */
+    margin: auto;
+    text-align: center; /* Default alignment */
+}
+
+/* Section Specific Styles */
+#about .section-content {
+    /* Unique styling for 'About Me' section */
+    text-align: left;
+}
+
+#portfolio .section-content {
+    /* Unique styling for 'Portfolio' section */
+    text-align: right;
+}
+
+#insights .section-content {
+    /* Unique styling for 'Insights' section */
+    text-align: justify;
+}
+
+#contact .section-content {
+    /* Unique styling for 'Contact' section */
+    text-align: center;
+}
+
+/* Image Placeholder Styles */
+.image-placeholder {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border: 1px dashed #ccc;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Animations for Image Placeholders */
+/* Add specific animations or transitions for image placeholders */
 
 /* Footer */
 /* ... Existing styles ... */
