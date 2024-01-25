@@ -13,7 +13,7 @@ body {
 
 /* Landing Page Styling */
 .landing {
-    background: rgba(34, 139, 34, 0.5); /* Forest green with transparency */
+    background: rgba(34, 139, 34, 0.5); /* Transparent forest green */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,10 +26,11 @@ body {
     font-size: 4rem;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    width: 40%;
-    border: medium solid #fff;
     font-family: 'Times New Roman', serif; /* Regal font */
     text-transform: uppercase;
+    width: 40%; /* Stretched to fit 40% of the page */
+    border: medium solid #fff;
+    padding: 20px;
 }
 
 /* Top Fixed Bar Styling */
@@ -47,7 +48,7 @@ body {
 }
 
 .top-bar .logo {
-    margin-left: 10px;
+    margin-left: 10px; /* Indent from left */
 }
 
 .top-bar nav ul {
@@ -57,20 +58,20 @@ body {
 }
 
 .top-bar nav ul li {
-    margin-left: 30px; /* Increased spacing */
-    text-transform: uppercase; /* All-caps menu items */
+    margin-left: 30px; /* Spacing between menu items */
+    text-transform: uppercase; /* All caps */
+    font-weight: 300; /* Thin font */
 }
 
 .top-bar nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 1em;
-    font-weight: 300; /* Thin font */
 }
 
 /* Main Content */
 main {
-    margin-top: 60px;
+    margin-top: 60px; /* Space for top bar */
 }
 
 main section {
@@ -79,6 +80,8 @@ main section {
     align-items: center;
     justify-content: center;
     position: relative;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out;
 }
 
 .section-content {
@@ -90,8 +93,6 @@ main section {
 /* Section Specific Styles */
 #about .section-content, #portfolio .section-content, #insights .section-content, #contact .section-content {
     /* Unique styling for each section */
-    transition: opacity 1s ease-in-out;
-    opacity: 0; /* Initially hidden */
 }
 
 /* Image Placeholder Styles */
@@ -100,8 +101,8 @@ main section {
     max-width: 500px;
     margin: 20px auto;
     border: 1px dashed #ccc;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     transform: scale(0); /* Initially scaled down */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     opacity: 0; /* Initially hidden */
 }
 
@@ -117,30 +118,24 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .top-bar .logo, .top-bar nav ul {
-        width: 100%;
-        text-align: center;
-    }
-
-    .top-bar nav ul {
-        flex-direction: column;
-        margin-top: 10px;
+    .landing h1 {
+        font-size: 3rem; /* Smaller font size on mobile */
+        width: 80%; /* Wider on mobile */
     }
 
     .top-bar nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
+        margin-left: 15px; /* Less spacing on mobile */
+    }
+
+    main section {
+        opacity: 1; /* Always visible on mobile */
     }
 
     main .section-content {
-        width: 90%;
+        width: 90%; /* Wider on mobile */
     }
 
     .image-placeholder {
-        max-width: 300px;
-    }
-
-    .landing h1 {
-        width: 80%; /* Adjust for smaller screens */
+        max-width: 300px; /* Smaller images on mobile */
     }
 }
