@@ -72,4 +72,44 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin: 50px auto;
-    padding: 20px
+    padding: 20px;
+    width: 80%;
+    transform: scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.content-frame:hover {
+    transform: scale(1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .landing h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Additional Styling */
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+/* Add any specific styles for buttons, forms, etc. */
