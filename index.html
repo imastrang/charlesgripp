@@ -3,47 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Gripp's Finance Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Charles Gripp - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav id="topMenu">
+    <!-- Logo Button -->
+    <div class="logo-button">
+        <a href="#about"><img src="logo.png" alt="Logo"></a>
+    </div>
+
+    <!-- Top Menu -->
+    <header class="top-menu">
+        <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <!-- More tabs as needed -->
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#insights">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <button id="logoButton" onclick="navigateToAbout()">🔍</button>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <section id="landing">
-            <h1>Welcome to Charles Gripp's Portfolio</h1>
-            <img src="placeholder.jpg" alt="Placeholder Image">
-            <!-- Placeholder for main image -->
-        </section>
         <section id="about">
-            <h2>About Charles Gripp</h2>
-            <p>Charles is a young ambitious investor with a focus on simple strategic investing strategies. He has a keen interest in nano caps, cryptocurrencies, and NPV Arbitrage.</p>
-            <img src="placeholder.jpg" alt="Placeholder Image">
-            <!-- Placeholder for about section image -->
+            <div class="content">
+                <h2>About Charles Gripp</h2>
+                <img src="placeholder-about.jpg" alt="About Me Image" class="image-placeholder">
+                <p>Charles Gripp: A Path Untraditional in Finance...</p>
+            </div>
         </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <p>Charles excels in Financial Analysis, Time Management, Technical Abilities, Critical Thinking, and Customer Service.</p>
-            <img src="placeholder.jpg" alt="Placeholder Image">
-            <!-- Placeholder for skills section image -->
+
+        <section id="portfolio">
+            <div class="content">
+                <h2>Portfolio</h2>
+                <img src="placeholder-portfolio.jpg" alt="Portfolio Image" class="image-placeholder">
+                <p>Managing a portfolio with a focus on depressed businesses...</p>
+            </div>
         </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <p>As a self-employed investor, Charles has been managing a deep value portfolio focused on depressed businesses, industries, and countries.</p>
-            <!-- Placeholder for experience section image -->
-            <img src="placeholder.jpg" alt="Placeholder Image">
+
+        <section id="insights">
+            <div class="content">
+                <h2>Insights</h2>
+                <img src="placeholder-insights.jpg" alt="Insights Image" class="image-placeholder">
+                <p>Explore my insights on value investing, market trends...</p>
+            </div>
         </section>
-        <!-- Additional sections as needed -->
+
+        <section id="contact">
+            <div class="content">
+                <h2>Contact</h2>
+                <img src="placeholder-contact.jpg" alt="Contact Image" class="image-placeholder">
+                <p>Interested in discussing investment strategies or seeking financial advice...</p>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Charles Gripp. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
