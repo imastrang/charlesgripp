@@ -50,18 +50,22 @@ main section {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .content {
     max-width: 80%;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .image-placeholder {
     width: 100%;
-    max-width: 500px; /* Adjust based on image size */
+    max-width: 500px;
     margin: 20px auto;
     border: 1px dashed #ccc;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 /* Footer */
