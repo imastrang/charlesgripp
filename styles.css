@@ -13,24 +13,25 @@ body {
 
 /* Landing Page Styling */
 .landing {
-    background: rgba(34, 139, 34, 0.5); /* Transparent forest green */
+    background-color: #006400; /* Darker forest green */
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: opacity 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .landing h1 {
     font-size: 4rem;
     color: #fff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    font-family: 'Times New Roman', serif; /* Regal font */
+    font-family: 'Georgia', serif; /* Interesting and engaging font */
     text-transform: uppercase;
-    width: 40%; /* Stretched to fit 40% of the page */
-    border: medium solid #fff;
-    padding: 20px;
 }
 
 /* Top Fixed Bar Styling */
@@ -41,14 +42,14 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+    display: none; /* Initially hidden */
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 5;
 }
 
 .top-bar .logo {
-    margin-left: 10px; /* Indent from left */
+    margin-left: 10px;
 }
 
 .top-bar nav ul {
@@ -58,9 +59,9 @@ body {
 }
 
 .top-bar nav ul li {
-    margin-left: 30px; /* Spacing between menu items */
-    text-transform: uppercase; /* All caps */
-    font-weight: 300; /* Thin font */
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .top-bar nav ul li a {
@@ -71,17 +72,15 @@ body {
 
 /* Main Content */
 main {
-    margin-top: 60px; /* Space for top bar */
+    padding-top: 60px; /* Space for top bar */
 }
 
 main section {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out;
 }
 
 .section-content {
@@ -90,20 +89,14 @@ main section {
     text-align: center;
 }
 
-/* Section Specific Styles */
-#about .section-content, #portfolio .section-content, #insights .section-content, #contact .section-content {
-    /* Unique styling for each section */
-}
-
 /* Image Placeholder Styles */
 .image-placeholder {
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
-    border: 1px dashed #ccc;
-    transform: scale(0); /* Initially scaled down */
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 0; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transform: scale(0); /* Initially scaled down */
 }
 
 /* Footer */
@@ -112,30 +105,24 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: relative;
     width: 100%;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .landing h1 {
-        font-size: 3rem; /* Smaller font size on mobile */
-        width: 80%; /* Wider on mobile */
+        font-size: 3rem;
     }
 
     .top-bar nav ul li {
-        margin-left: 15px; /* Less spacing on mobile */
-    }
-
-    main section {
-        opacity: 1; /* Always visible on mobile */
+        margin-left: 15px;
     }
 
     main .section-content {
-        width: 90%; /* Wider on mobile */
+        width: 90%;
     }
 
     .image-placeholder {
-        max-width: 300px; /* Smaller images on mobile */
+        max-width: 300px;
     }
 }
