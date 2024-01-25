@@ -1,42 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.content-frame');
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialize AOS for animation on scroll
+    AOS.init({
+        duration: 1200, // Duration of animations
+        once: true // Animation only happens once when scrolling
+    });
 
-    // Smooth scroll and frame appearance
+    // Smooth scroll to 'About' section when logo button is clicked
+    document.querySelector('#logoButton').addEventListener('click', function() {
+        document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Implementing smooth scrolling with gentle snapping effect
+    // This requires a library or custom smooth scroll implementation
+    // Example with a hypothetical smoothScroll function
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            smoothScrollToFrame(document.querySelector(this.getAttribute('href')));
+            let target = document.querySelector(this.getAttribute('href'));
+            smoothScroll(target); // smoothScroll is a custom or library function
         });
     });
-
-    // Gradual appearance of text as you scroll to each frame
-    window.addEventListener('scroll', () => {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionHeight = window.innerHeight;
-            if (sectionTop <= sectionHeight / 2) {
-                section.style.opacity = '1';
-            } else {
-                section.style.opacity = '0';
-            }
-        });
-    });
-
-    // Landing Page Interaction
-    const landingPage = document.getElementById('landingPage');
-    landingPage.addEventListener('click', () => {
-        landingPage.style.opacity = '0';
-        setTimeout(() => {
-            landingPage.remove();
-            smoothScrollToFrame(document.getElementById('about'));
-        }, 1000);
-    });
-
-    // Smooth scroll to frame function
-    function smoothScrollToFrame(target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-            target.style.opacity = '1';
-        }, 600); // Slower reveal of content
-    }
 });
+
+// Custom smooth scroll function (if not using a library)
+function smoothScroll(target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+}
