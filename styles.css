@@ -53,32 +53,40 @@ main {
     padding-top: 60px; /* Space for top bar */
 }
 
-main section {
+main .section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-.left-align .section-content,
-.right-align .section-content {
-    text-align: justify;
+main .section:nth-child(even) {
+    background-color: #eef2f5; /* Alternate background for visual appeal */
 }
 
-.center-align .section-content {
-    text-align: center;
+.section-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
 }
 
 .section-content h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    text-align: center; /* Header alignment */
 }
 
 .section-content p {
     font-size: 1.2rem;
     color: #666;
+    margin-bottom: 20px;
+}
+
+.center-align .section-content {
+    text-align: center; /* Centered text for 'Contact' section */
 }
 
 /* Footer */
@@ -102,15 +110,11 @@ footer {
         margin: 10px 0;
     }
 
-    main section {
-        padding: 10px;
-    }
-
-    .section-content h2 {
+    main .section-content h2 {
         font-size: 2rem;
     }
 
-    .section-content p {
+    main .section-content p {
         font-size: 1rem;
     }
 }
