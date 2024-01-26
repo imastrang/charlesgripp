@@ -1,43 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Smooth Scroll for Navigation Links
-    document.querySelectorAll('.top-bar nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // Smooth Scrolling for Navigation Links
+    const navLinks = document.querySelectorAll('.top-bar nav a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
 
     // Dynamic Content Loading for Portfolio Section
     function loadPortfolioItems() {
         // Placeholder for loading portfolio items dynamically
-        // This can be implemented with AJAX requests or fetching data from a CMS
+        // Fetch data from a content management system or static file
     }
 
-    // Contact Form Submission
+    // Contact Form Submission with Validation
     const contactForm = document.querySelector('#contact form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            // Add form validation and submission logic here
+            // Form validation logic here
+            // Submit form data via AJAX or similar method if valid
         });
     }
 
-    // Implement additional features based on sample code, such as:
-    // - Interactive table or list elements
-    // - Dynamic loading of content (e.g., insights or blog posts)
-    // - Interactive charts or graphs for financial data
+    // Additional interactive features based on the specific needs and design
+    // Example: Animations on scroll, expandable content sections, interactive charts
 
-    // Initialize functions
+    // Initialize portfolio items and other dynamic content
     loadPortfolioItems();
-
 });
 
 // Additional JavaScript functionalities can include:
-// - Animations on scroll
-// - Interactive modals or pop-ups
-// - Dynamic statistics or counters
-// - Custom sliders or carousels
+// - Dark Mode Toggle: Implement a dark/light theme switcher
+// - Responsive Menus: Enhance mobile navigation experience
+// - Accessibility Features: Ensure the site is accessible to all users
 
