@@ -13,7 +13,7 @@ body {
 
 /* Landing Page Styling */
 .landing {
-    background-color: #006400; /* Darker forest green */
+    background-color: rgba(0, 100, 0, 0.8); /* Darker forest green with 80% opacity */
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -25,12 +25,13 @@ body {
     top: 0;
     left: 0;
     z-index: 10;
+    cursor: pointer;
 }
 
 .landing h1 {
     font-size: 4rem;
     color: #fff;
-    font-family: 'Georgia', serif; /* Interesting and engaging font */
+    font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
 }
 
@@ -42,7 +43,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: none; /* Initially hidden */
+    display: none;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
@@ -72,7 +73,7 @@ body {
 
 /* Main Content */
 main {
-    padding-top: 60px; /* Space for top bar */
+    padding-top: 60px;
 }
 
 main section {
@@ -95,8 +96,8 @@ main section {
     max-width: 500px;
     margin: 20px auto;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 0; /* Initially transparent */
-    transform: scale(0); /* Initially scaled down */
+    opacity: 0;
+    transform: scale(0);
 }
 
 /* Footer */
