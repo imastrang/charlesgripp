@@ -11,30 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Landing Page Styling */
-.landing {
-    background-color: rgba(0, 100, 0, 0.8); /* Darker forest green with 80% opacity */
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: opacity 1s ease-in-out;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.landing h1 {
-    font-size: 4rem;
-    color: #fff;
-    font-family: 'Cormorant Garamond', serif;
-    text-transform: uppercase;
-}
-
 /* Top Fixed Bar Styling */
 .top-bar {
     background-color: #fff;
@@ -43,10 +19,11 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    border-bottom: 1px solid #ddd;
 }
 
 .top-bar .logo {
@@ -73,31 +50,35 @@ body {
 
 /* Main Content */
 main {
-    padding-top: 60px;
+    padding-top: 60px; /* Space for top bar */
 }
 
 main section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
-.section-content {
-    width: 60%;
-    margin: auto;
+.left-align .section-content,
+.right-align .section-content {
+    text-align: justify;
+}
+
+.center-align .section-content {
     text-align: center;
 }
 
-/* Image Placeholder Styles */
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 0;
-    transform: scale(0);
+.section-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    font-size: 1.2rem;
+    color: #666;
 }
 
 /* Footer */
@@ -106,24 +87,30 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
     width: 100%;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .landing h1 {
-        font-size: 3rem;
+    .top-bar nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
     .top-bar nav ul li {
-        margin-left: 15px;
+        margin: 10px 0;
     }
 
-    main .section-content {
-        width: 90%;
+    main section {
+        padding: 10px;
     }
 
-    .image-placeholder {
-        max-width: 300px;
+    .section-content h2 {
+        font-size: 2rem;
+    }
+
+    .section-content p {
+        font-size: 1rem;
     }
 }
