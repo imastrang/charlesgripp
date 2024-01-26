@@ -1,50 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Navigation Bar Interaction
-    const navLinks = document.querySelectorAll('.top-bar nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('mouseover', function() {
-            this.style.color = '#d9534f'; // Change color on hover
-        });
-        link.addEventListener('mouseout', function() {
-            this.style.color = '#fff'; // Revert color on mouseout
+    // Smooth Scroll for Navigation Links
+    document.querySelectorAll('.top-bar nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
-    // Portfolio Gallery (Placeholder for dynamic content loading)
-    // This could be further implemented with AJAX requests or fetching data from a CMS
+    // Dynamic Content Loading for Portfolio Section
     function loadPortfolioItems() {
-        // Placeholder for loading portfolio items
+        // Placeholder for loading portfolio items dynamically
+        // This can be implemented with AJAX requests or fetching data from a CMS
     }
 
-    // Testimonials Carousel
-    // Placeholder for carousel functionality (could use a library like Slick or Swiper)
-    function initializeTestimonialsCarousel() {
-        // Placeholder for initializing testimonials carousel
-    }
-
-    // Contact Form Validation
-    const contactForm = document.getElementById('contact-form');
+    // Contact Form Submission
+    const contactForm = document.querySelector('#contact form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            // Form validation logic here
-            // For example, check if email is valid, message is not empty, etc.
-            // If validation passes, send form data using AJAX or similar method
+            // Add form validation and submission logic here
         });
     }
 
-    // Initialize functions on load
+    // Implement additional features based on sample code, such as:
+    // - Interactive table or list elements
+    // - Dynamic loading of content (e.g., insights or blog posts)
+    // - Interactive charts or graphs for financial data
+
+    // Initialize functions
     loadPortfolioItems();
-    initializeTestimonialsCarousel();
 
 });
 
-// Dark Mode Toggle (Example Implementation)
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        // Additional logic to toggle dark mode styles
-    });
-}
+// Additional JavaScript functionalities can include:
+// - Animations on scroll
+// - Interactive modals or pop-ups
+// - Dynamic statistics or counters
+// - Custom sliders or carousels
+
