@@ -1,39 +1,36 @@
+/* Color Palette */
 :root {
-    --primary-color: #ff6a3e;
-    --secondary-color: #ffba43;
-    --header-color: #1a1a1a;
-    --text-color: #4e4b66;
-    --footer-background: #1a1a1a;
-    --footer-text-color: #fafbfc;
-    --body-font-size: 1rem;
-    --header-font-size: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --topper-font-size: clamp(0.8125rem, 1.6vw, 1rem);
+    --first-color: #081f37;
+    --second-color: #5fc9f3;
+    --third-color: #2e79ba;
+    --fourth-color: #1e549f;
+    --text-color: #ffffff;
+    --font-family: 'Arial', sans-serif;
 }
 
 /* Base Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #f4f4f4;
-    box-sizing: border-box;
+    background-color: var(--first-color);
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--second-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--third-color);
 }
 
 /* Top Bar */
 .top-bar {
-    background: var(--header-color);
-    color: #fff;
+    background: var(--fourth-color);
+    color: var(--text-color);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -65,8 +62,29 @@ main {
 }
 
 section {
-    padding: var(--sectionPadding) 0;
+    padding: 100px 0;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about {
+    background-color: var(--first-color);
+}
+
+#portfolio {
+    background-color: var(--second-color);
+}
+
+#insights {
+    background-color: var(--third-color);
+}
+
+#contact {
+    background-color: var(--fourth-color);
 }
 
 .section-content {
@@ -80,31 +98,10 @@ section {
     margin-bottom: 20px;
 }
 
-/* Typography */
-.cs-topper {
-    font-size: var(--topper-font-size);
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.25rem;
-}
-
-.cs-title {
-    font-size: var(--header-font-size);
-    font-weight: 900;
-    color: var(--header-color);
-    margin-bottom: 1rem;
-}
-
-.cs-text {
-    font-size: var(--body-font-size);
-    line-height: 1.5em;
-    color: var(--text-color);
-}
-
 /* Footer */
 footer {
-    background: var(--footer-background);
-    color: var(--footer-text-color);
+    background: var(--fourth-color);
+    color: var(--text-color);
     text-align: center;
     padding: 20px 0;
 }
@@ -116,7 +113,7 @@ footer {
 
 .footer-links a,
 .footer-legal a {
-    color: var(--footer-text-color);
+    color: var(--text-color);
     margin: 0 10px;
 }
 
